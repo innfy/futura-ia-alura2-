@@ -9,11 +9,11 @@ const perguntas = [
     alternativas: [
         {
             texto: "Sim, tenho minhas ideias pessoais",
-            arfimação: "afirmação"
+            arfimacao: "afirmação"
         },
         {
             texto: "Não, tenho outras coisas em mente",
-            arfimação: "afirmação"
+            arfimacao: "afirmação"
         }
      ]
   },
@@ -22,11 +22,11 @@ const perguntas = [
     alternativas: [
         {
             texto: "Sim, tudo esta organizzado",
-            arfimação: "afirmação"
+            arfimacao: "afirmação"
         },
         {
             texto: "Não",
-            arfimação: "afirmação"
+            arfimacao: "afirmação"
         } 
      ]
   },
@@ -35,11 +35,11 @@ const perguntas = [
     alternativas: [
         {
             texto: "Sim",
-            arfimação: "afirmação"
+            arfimacao: "afirmação"
         },
         {
             texto: "Não cara",
-            arfimação: "afirmação"
+            arfimacao: "afirmação"
         }
      ]
   },
@@ -48,21 +48,22 @@ const perguntas = [
     alternativas: [
         {
             texto: "SIM",
-            arfimação: "afirmação"
+            arfimacao: "afirmação"
         },
         {
             texto: "NÃO",
-            arfimação: "afirmação"
+            arfimacao: "afirmação"
         },
      ]
   }
 ];
+
 let atual = 0;
 let perguntaAtual;
 
-function mostrarPergunta(){
+function mostrarPergunta() {
     perguntaAtual = perguntas[atual]
-    caixaPerguntas = text.Content = perguntaAtual.enunciado;
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
     mostrarAlternativas();
 }
 
@@ -70,7 +71,7 @@ function mostrarAlternativas(){
     for(const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativa = document.createElement("button");
         botaoAlternativa.textContent = alternativa.texto;
-        botaoAlternativa.addEventListener("click", function(){
+        botaoAlternativa.addEventListener("click", function() {
             atual++;
             mostrarPergunta();
         })
