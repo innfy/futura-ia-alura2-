@@ -14,8 +14,8 @@ const perguntas = [
         {
             texto: "Não, tenho outras coisas em mente",
             arfimacao: "afirmação"
-        }
-     ]
+        },
+     ],
   },
   {
     enunciado: "Então voce pretende seguir nestas areas?",
@@ -27,8 +27,8 @@ const perguntas = [
         {
             texto: "Não",
             arfimacao: "afirmação"
-        } 
-     ]
+        },
+     ],
   },
   {
     enunciado: "E ja foi feito cada planejamento?",
@@ -40,8 +40,8 @@ const perguntas = [
         {
             texto: "Não cara",
             arfimacao: "afirmação"
-        }
-     ]
+        },
+     ],
   },
   {
     enunciado: "Voce quer isso?",
@@ -54,8 +54,8 @@ const perguntas = [
             texto: "NÃO",
             arfimacao: "afirmação"
         },
-     ]
-  }
+     ],
+  },
 ];
 
 let atual = 0;
@@ -80,3 +80,15 @@ function mostrarAlternativas(){
 }
 
 mostrarPergunta();
+
+function aleatorio(lista) {
+const posicao = Math.floor(Math.random()* lista.length);
+return lista[posicao];
+}
+
+function respostaSelecionada(opcaoSelecionada) {
+    const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
+historiaFinal += afirmacoes + " ";
+atual++;
+mostraPergunta();
+}
